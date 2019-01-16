@@ -33,6 +33,10 @@ app.get("/",(req,res)=>{
 app.get("/vote/:voteId/:questionId",(req,res)=>{
 	const {questionId} = req.params;
 	const {voteId} = req.params;
+	const listansw = req.params;
+	console.log(listansw);
+	// console.log(voteId);
+	// console.log(questionId);
 	let questions = [];
 	try{
 		questions = JSON.parse(fs.readFileSync("database.json"));
