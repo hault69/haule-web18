@@ -1,14 +1,17 @@
 const express = require("express");
 const app = express();
 
-//chọn thư mục load
-app.use(express.static("css"));
+//Sử dụng như một thư mục công cộng cho phép người dùng truy cập
+//nếu không chỉ rõ link trong "/" thì nó sẽ coi root là thư mục public 
+
 
 // Router
 app.get("/", function(request, response) {
 	console.log(request);
 	response.send("Le Trung Hau!");
 });
+
+app.use("/",express.static("css"));
 
 app.get("/about", function(req, res) {
 	// res.send("<h1>asjdoiasjd</h1>");
